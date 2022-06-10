@@ -1,0 +1,55 @@
+<configuration>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <withJansi>true</withJansi>
+        <!-- encoders are assigned the type
+             ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
+        <encoder>
+            <pattern>%cyan(%d{HH:mm:ss.SSS}) %gray([%thread]) %highlight(%-5level) %magenta(%logger{36}) - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="info">
+        <appender-ref ref="STDOUT" />
+    </root>
+
+    <logger name="org.apache.kafka.streams.StreamsConfig" level="ERROR">
+        <appender-ref ref="STDOUT"/>
+    </logger>
+    <logger name="kafka.server" level="WARN">
+        <appender-ref ref="STDOUT"/>
+    </logger>
+    <logger name="kafka.log" level="WARN">
+        <appender-ref ref="STDOUT"/>
+    </logger>
+    <logger name="kafka.cluster" level="WARN">
+        <appender-ref ref="STDOUT"/>
+    </logger>
+    <logger name="kafka.coordinator" level="WARN">
+        <appender-ref ref="STDOUT"/>
+    </logger>
+    <logger name="kafka.controller" level="WARN">
+        <appender-ref ref="STDOUT"/>
+    </logger>
+    <logger name="kafka.zk" level="WARN">
+        <appender-ref ref="STDOUT"/>
+    </logger>
+    <logger name="org.apache" level="WARN">
+        <appender-ref ref="STDOUT"/>
+    </logger>
+    <logger name="org.apache.kafka.streams" level="INFO">
+        <appender-ref ref="STDOUT"/>
+    </logger>
+    <logger name="org.apache.kafka.clients" level="ERROR">
+        <appender-ref ref="STDOUT"/>
+    </logger>
+    <logger name="org.apache.kafka.common.utils.AppInfoParser" level="OFF">
+        <appender-ref ref="STDOUT"/>
+    </logger>
+    <logger name="io.confluent.kafka" level="WARN">
+        <appender-ref ref="STDOUT"/>
+    </logger>
+    <logger name="state.change.logger" level="WARN">
+        <appender-ref ref="STDOUT"/>
+    </logger>    
+</configuration>
